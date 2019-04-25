@@ -27,12 +27,12 @@ self.addEventListener('install', function (event) {
 	);
 });
 
-// self.addEventListener('fetch', function (event) {
-//   console.log('test1');
-// 	event.respondWith(
-// 		caches.match(event.request).then(function (response) {
-// 			if (response) return response;
-// 			return fetch(event.request);
-// 		})
-// 	);
-// });
+self.addEventListener('fetch', function (event) {
+  console.log('test1');
+	event.respondWith(
+		caches.match(event.request).then(function (response) {
+			if (response) return response;
+			return fetch(event.request);
+		})
+	);
+});
